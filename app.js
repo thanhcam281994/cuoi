@@ -8,6 +8,7 @@ var LocalStrategy       = require('passport-local').Strategy;
 var session 			= require('express-session');
 var bodyParser 			= require('body-parser');
 var db               	= require('./Models/db');
+var passport1            = require('./Config/passport')(passport);
 
 var index = require('./routes/index');
 var users = require('./routes/users');

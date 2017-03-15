@@ -1,5 +1,5 @@
 var User  = require('../../Models/userdb');
-const passport = require('passport');
+const passport = require('./../../Config/passport');
 const LocalStrategy = require('passport-local').Strategy;
 
 var Promise = require('promise');
@@ -7,36 +7,23 @@ exports.index = function(req,res){
 	res.render('users/login');
 };
 
-exports.register = function(req, res){
-	res.render('users/register')
+exports.signup = function(req, res){
+	res.render('users/signup')
 };
 
 exports.store = function(req, res){
-	var fullname  	= req.body.fullname;
-	var mail 		= req.body.email;
-	var password 	= req.body.password;
-	var repassword  = req.body.conf_password;
-	var birthday 	= req.body.birthday;
-	var city		= req.body.country;
-	console.log(fullname+'   '+mail+'    '+city);
-	var promise = new Promise(function(resolve, reject){
-		if(mail == ''){
-			reject('Errors input');
-		}
-		resolve('Successfull');
-	});
-	promise
-		.then(function(message){
-			console.log(message);
-			// console.log(mail);
-			// res.send('Register successfull');
-		})
-		.catch(function(message){
-            console.log(message);
-        });
-	// var mail = req.body.email;
-	console.log(mail);
-	res.send('Register successfull');
+	console.log(213213);
+	// var fullname  	= req.body.fullname;
+	// var mail 		= req.body.email;
+	// var password 	= req.body.password;
+	// var repassword  = req.body.conf_password;
+	// var birthday 	= req.body.birthday;
+	// var city		= req.body.country;
+    passport.authenticate('local-signup', {
+    	successRedirect: '/index',
+        failureRedirect: '/signup',
+        failureFlash   : true
+	})
 };
 
 exports.login = function(req, res){
