@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Form login</title>
+<link rel="stylesheet" href="/stylesheets/register_style.css" />
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+</head>
+
+<body>
+<div class="container">
+    <form class="form-horizontal" role="form" method='post' name='form_register'>
+        <h2>Registration Form</h2>
+        <div class="form-group">
+            <label for="firstName" class="col-sm-3 control-label">Full Name</label>
+            <div class="col-sm-9">
+                <input type="text" name='fullname' id="firstName" placeholder="Full Name" class="form-control" autofocus>
+                <span class="help-block">Last Name, First Name, eg.: Smith, Harry</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-sm-3 control-label">Email</label>
+            <div class="col-sm-9">
+                <input type="email" name='email' id="email" placeholder="Email" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-3 control-label">Password</label>
+            <div class="col-sm-9">
+                <input type="password" name='password' id="password" placeholder="Password" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="repassword" class="col-sm-3 control-label">Confirm Password</label>
+            <div class="col-sm-9">
+                <input type="password" name='conf_password' id="conf_password" placeholder="Confirm Password" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="birthDate" class="col-sm-3 control-label">Date of Birth</label>
+            <div class="col-sm-9">
+                <input type="date" name='birthday' id="birthDate" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="country" class="col-sm-3 control-label">Country</label>
+            <div class="col-sm-9">
+                <select id="country" class="form-control" name='country'>
+                    <option value='Hà Nội'>Hà Nội</option>
+                    <option value='Thái Bình'>Thái Bình</option>
+                    <option value='Hải Dương'>Hả Dương</option>
+                    <option value='Hưng Yên'>Hưng Yên</option>
+                    <option value='Đà Nẵng'>Đà Nẵng</option>
+                    <option value='Sài Gòn'>Sài Gòn</option>
+                    <option value='Huế'>Huế</option>
+                    <option value='Quảng Nam'>Quảng Nam</option>
+                </select>
+            </div>
+        </div> <!-- /.form-group -->
+        <div class="form-group">
+            <label class="control-label col-sm-3">Gender</label>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label class="radio-inline">
+                            <input type="radio" name='gerder' id="femaleRadio" value="0">Female
+                        </label>
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="radio-inline">
+                            <input type="radio" name='gerder' id="maleRadio" value="1">Male
+                        </label>
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="radio-inline">
+                            <input type="radio" name='gerder' id="uncknownRadio" value="2">Unknown
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- /.form-group -->
+        <div class="form-group">
+            <div class="col-sm-9 col-sm-offset-3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox">I accept <a href="#">terms</a>
+                    </label>
+                </div>
+            </div>
+        </div> <!-- /.form-group -->
+        <div class="form-group">
+            <div class="col-sm-9 col-sm-offset-3">
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+            </div>
+        </div>
+    </form> <!-- /form -->
+</div> <!-- ./container -->
+</body>
+
+</html>
+
+
+
