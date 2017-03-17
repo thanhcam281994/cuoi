@@ -1,10 +1,10 @@
 var User  = require('../../Models/userdb');
 exports.index = function(req,res){
-	res.render('users/login');
+	res.render('users/login', { message: req.flash('loginMessage') });
 };
 
 exports.signup = function(req, res){
-	res.render('users/signup')
+	res.render('users/signup', { message: req.flash('signupMessage') })
 };
 
 // exports.store = function(req, res){

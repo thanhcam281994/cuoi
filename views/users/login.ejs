@@ -53,8 +53,9 @@
 						<span class="input-group-addon"><i class="fa fa-lock"></i></span>
 						<input  type="password" class="form-control" name="password" placeholder="Password">
 					</div>
-                    <span class="help-block">Password error</span>
-
+                    <% if (message.length > 0) { %>
+					<div class="alert alert-danger"><%= message %></div>
+                    <% } %>
 					<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
 				</form>
 			</div>

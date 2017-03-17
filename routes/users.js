@@ -5,14 +5,14 @@ module.exports = function(app, passport) {
     app.get('/signup',User.signup);
     // process the signup form
     app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect : '/',
+        successRedirect : '/login',
         failureRedirect : '/signup',
-        failureFlash : true
+        failureFlash    : true
     }));
     // process the login form
-    app.post('/login',  passport.authenticate('local-login', {
-        successRedirect: '/',
-        failureRedirect: '/login',
-        failureFlash: true
+    app.post('/login', passport.authenticate('local-login', {
+        successRedirect : '/',
+        failureRedirect : '/login',
+        failureFlash    : true
     }));
 };
