@@ -1,13 +1,18 @@
-var express = require('express');
-var router  = express.Router();
 var User    = require('./../Controllers/Users/UsersController');
-/* GET users listing. */
-router.get('/', User.index);
 
-router.get('/signup', User.signup);
-
-router.post('/signup', User.store);
-
-router.post('/login', User.login);
-
-module.exports = router;
+module.exports = function(app, passport) {
+    app.get('/login',User.index);
+    app.get('/signup',User.signup);
+    // process the signup form
+    app.post('/signup', passport.authenticate('local-signup', {
+        successRedirect : '/',
+        failureRedirect : '/signup',
+        failureFlash : true
+    }));
+    // process the login form
+    app.post('/login',  passport.authenticate('local-login', {
+        successRedirect: '/',
+        failureRedirect: '/login',
+        failureFlash: true
+    }));
+};

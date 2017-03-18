@@ -8,13 +8,20 @@ var LocalStrategy       = require('passport-local').Strategy;
 var session 			= require('express-session');
 var bodyParser 			= require('body-parser');
 var db               	= require('./Models/db');
-var passport1            = require('./Config/passport')(passport);
+
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+// var users = require('./routes/users');
+
+require('./Config/passport')(passport);
 
 var app = express();
 
+app.use(session({
+    secret: 'ilovenodejs', // session secret
+    resave: true,
+    saveUninitialized: true
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -31,8 +38,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
-
+// app.use('/users', users);
+require('./routes/users')(app, passport);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
