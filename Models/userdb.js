@@ -9,28 +9,26 @@ var userSchema = new mongoose.Schema({
         birthday	 : {type:String, require:true},
         city		 : {type:String, require:true}
 	},
-	facebook 	:{
-		id			 : {type:String, require:true, unique:true},
+    facebook 	:{
+		id			 : String,
 		token		 : String,
-		email		 : {type:String, require:true, unique:true},
+		email		 : String,
 		name		 : String,
 		image		 : String
-	},
+    },
     twitter     : {
-        id           : {type:String, require:true, unique:true},
+        id           : String,
         token        : String,
         displayName  : String,
         username     : String,
 		image		 : String
     },
     google           : {
-        id           : {type:String, require:true, unique:true},
+        id           : String,
         token        : String,
-        email        : {type:String, require:true, unique:true},
+        email        : String,
         name         : String
     }
-
-
 });
 
 //generator a hash
