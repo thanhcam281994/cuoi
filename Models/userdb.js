@@ -14,7 +14,8 @@ var userSchema = new mongoose.Schema({
 		token		 : String,
 		email		 : String,
 		name		 : String,
-		image		 : String
+        picture		 : String,
+        gender       : String
     },
     twitter     : {
         id           : String,
@@ -29,8 +30,6 @@ var userSchema = new mongoose.Schema({
         email        : String,
         name         : String
     }
-
-
 });
 
 //generator a hash
